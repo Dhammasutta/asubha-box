@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ห้องอสุภะ – เพื่อการภาวนา</title>
+  <style>
+    body {
+      font-family: "TH Sarabun New", sans-serif;
+      background: #FFF8DC;
+      color: #5A3E1B;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff9e6;
+      padding: 25px;
+      border: 1px solid #8B4513;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h1, h2 {
+      color: #8B0000;
+      text-align: center;
+    }
+    .warning {
+      background: #ffefef;
+      border: 1px dashed darkred;
+      color: darkred;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .img-frame {
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .caption {
+      text-align: center;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .buttons button {
+      font-size: 16px;
+      padding: 8px 16px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      background: #8B4513;
+      color: white;
+      cursor: pointer;
+    }
+    .buttons button:hover {
+      background: #A0522D;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 30px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🪷 ห้องอสุภะ – เพื่อการภาวนา</h1>
 
+    <div class="warning">
+      ⚠️ โปรดใช้ด้วยจิตที่ตั้งมั่น<br>
+      หากจิตยังอ่อนไหว ไม่ควรเปิดภาพเหล่านี้โดยไม่จำเป็น
+    </div>
+
+    <div class="img-frame">
+      <img id="asubha-img" src="" alt="อสุภะ">
+    </div>
+    <div class="caption" id="asubha-caption">ภาพนี้วางไว้เพื่อประโยชน์แห่งการปลงขันธ์</div>
+
+    <div class="buttons">
+      <button onclick="prevImage()">◀ ย้อนกลับ</button>
+      <button onclick="nextImage()">▶ ถัดไป</button>
+      <button onclick="randomImage()">🎲 สุ่มภาพ</button>
+    </div>
+
+    <footer>
+      ขออนุโมทนาแด่ทุกท่านผู้ร่วมวางเส้นทางแห่งการคลายกำหนัด 🙏
+    </footer>
+  </div>
+
+  <script>
+    const images = [
+      {
+        id: "1cYoF1LFSyxXaufbODeeGiCKGPlgHasR0",
+        caption: "อสุภะ: ศพที่มีโลหิตเปรอะเปื้อน"
+      },
+      {
+        id: "12W24bm-1wClVKJoFD33NtITNsksv4np3",
+        caption: "ภาพอสุภะเพื่อการพิจารณาความไม่งาม"
+      },
+      {
+        id: "1zueT-7LibYzC4U6YgRBx2EHEiV0JTn6N",
+        caption: "การปลงอสุภะกองที่ ๘ โลหิตกะ"
+      },
+      {
+        id: "1d0RVPrE7mIre5LY3Ef_r7dN1sLqTblmN",
+        caption: "อสุภะกองที่ ๔ ซากศพขาดกลางตัว"
+      },
+      {
+        id: "1ZIXmWmctANdt5-VAkyx8E9FpNjKr5vaI",
+        caption: "ซากศพขาดกลางลำตัวน่าเวทนา"
+      },
+      {
+        id: "14fQLMA1Bi2UC3m31dxqu-4wooLhNOcAT",
+        caption: "อสุภะ: ขาดตรงกลางจนเห็นภายใน"
+      },
+      {
+        id: "1zsK7vzzrO1b1mGzkzoLDE6kuCvEQ3ImD",
+        caption: "ศพที่แยกครึ่งอย่างชัดเจน"
+      },
+      {
+        id: "11UOhf6rYUViP3CoP14WJ8KzOHsDt0b4K",
+        caption: "ภาพอสุภะในหมวดวิจฉิตรกะ"
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+      const img = document.getElementById("asubha-img");
+      const caption = document.getElementById("asubha-caption");
+      const item = images[index];
+      img.src = `https://drive.google.com/uc?export=view&id=${item.id}`;
+      caption.textContent = item.caption;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    function randomImage() {
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * images.length);
+      } while (randomIndex === currentIndex);
+      currentIndex = randomIndex;
+      showImage(currentIndex);
+    }
+
+    window.onload = () => {
+      showImage(currentIndex);
+    };
+  </script>
+</body>
+</html>
+
+Add full HTML for asubha-box
