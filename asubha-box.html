@@ -5,13 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ห้องอสุภะ – เพื่อการภาวนา</title>
   <style>
-  
-  <style>
-.buttons button:hover {
-  background: #f5f5f5;
-}
-</style>
-    
     body {
       font-family: "TH Sarabun New", sans-serif;
       background: #FFF8DC;
@@ -63,14 +56,14 @@
       font-size: 16px;
       padding: 8px 16px;
       margin: 5px;
-      border: none;
+      border: 1px solid #5a3e1b;
       border-radius: 6px;
-      background: #8B4513;
-      color: white;
+      background: white;
+      color: #5a3e1b;
       cursor: pointer;
     }
     .buttons button:hover {
-      background: #A0522D;
+      background: #f0f0f0;
     }
     footer {
       text-align: center;
@@ -88,27 +81,24 @@
       ⚠️ โปรดพิจารณาด้วยจิตที่ตั้งมั่น<br>
       หากจิตยังอ่อนไหว ไม่ควรดูภาพเหล่านี้โดยไม่จำเป็น
     </div>
-   <div class="buttons">
-  <button style="background: white; color: #5a3e1b; border: 1px solid #5a3e1b; border-radius: 6px; font-size: 16px; margin: 5px; padding: 8px 16px; cursor: pointer;">
-    ◀ ย้อนกลับ
-  </button>
-  <button style="background: white; color: #5a3e1b; border: 1px solid #5a3e1b; border-radius: 6px; font-size: 16px; margin: 5px; padding: 8px 16px; cursor: pointer;">
-    ▶ ถัดไป
-  </button>
-  <button style="background: white; color: #5a3e1b; border: 1px solid #5a3e1b; border-radius: 6px; font-size: 16px; margin: 5px; padding: 8px 16px; cursor: pointer;">
-    🎲 สุ่มภาพ
-  </button>
-</div>
+
+    <div class="buttons">
+      <button onclick="prevImage()">◀ ย้อนกลับ</button>
+      <button onclick="nextImage()">▶ ถัดไป</button>
+      <button onclick="randomImage()">🎲 สุ่มภาพ</button>
+    </div>
+
     <div class="img-frame">
       <img id="asubha-img" src="" alt="อสุภะ">
     </div>
     <div class="caption" id="asubha-caption">ภาพนี้วางไว้เพื่อประโยชน์แห่งการปลงขันธ์</div>
 
-
-
     <footer>
-    <center></center>  "บัดนี้ร่างกายที่เคยถนอม กลับเป็นของไม่น่าดู ไม่น่าพึงใจ<br>
-รูปนี้... ไม่มีสิ่งใดเหลือให้หลงไหลอีกต่อไป<br> อนิจจัง ทุกขัง อนัตตา"🙏</center>
+      <p>
+        บัดนี้ร่างกายที่เคยถนอม กลับเป็นของไม่น่าดู ไม่น่าพึงใจ<br>
+        รูปนี้... ไม่มีสิ่งใดเหลือให้หลงไหลอีกต่อไป<br>
+        อนิจจัง ทุกขัง อนัตตา 🙏
+      </p>
     </footer>
   </div>
 
