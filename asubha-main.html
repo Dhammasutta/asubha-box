@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ห้องอสุภะ - รวมภาพเพื่อการพิจารณา</title>
+  <style>
+    body {
+      font-family: "TH Sarabun New", sans-serif;
+      background: #FFF8DC;
+      color: #5A3E1B;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #8B0000;
+    }
+    .accordion {
+      background-color: #f0e6d6;
+      border: 1px solid #8B4513;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .accordion h3 {
+      margin: 0;
+      cursor: pointer;
+    }
+    .accordion-content {
+      display: none;
+      padding: 10px 0;
+    }
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 520px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .info {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🪷 ห้องอสุภะ - รวมภาพเพื่อการพิจารณา</h1>
+
+  <div class="info">
+    คลิกดูภาพแบบสุ่มด้านล่าง หรือเลือกแสดงภาพตามลักษณะของอสุภะทั้ง 10 กอง<br>
+    เพื่อประโยชน์แห่งการพิจารณาความไม่งามของสังขาร
+  </div>
+
+  <!-- กล่องสุ่มภาพรวม -->
+  <iframe src="https://dhammasutta.github.io/asubha-box/asubha-box.html"></iframe>
+
+  <div class="accordion">
+    <h3 onclick="toggleAccordion(this)">📂 กองที่ ๔ – วิจฉิตรกะ ▾</h3>
+    <div class="accordion-content">
+      <iframe src="https://dhammasutta.github.io/asubha-box/gong4.html"></iframe>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <h3 onclick="toggleAccordion(this)">📂 กองที่ ๘ – โลหิตกะ ▾</h3>
+    <div class="accordion-content">
+      <iframe src="https://dhammasutta.github.io/asubha-box/gong8.html"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const isOpen = content.style.display === "block";
+      document.querySelectorAll('.accordion-content').forEach(el => el.style.display = "none");
+      document.querySelectorAll('.accordion h3').forEach(el => el.innerHTML = el.innerHTML.replace('▴', '▾'));
+      if (!isOpen) {
+        content.style.display = "block";
+        header.innerHTML = header.innerHTML.replace('▾', '▴');
+      }
+    }
+  </script>
+</body>
+</html>
+Create asubha-main.html
