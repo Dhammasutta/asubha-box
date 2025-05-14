@@ -103,84 +103,76 @@
   </div>
 
   <script>
-  const images = [
+    const images = [
+      {
+        url: "https://github.com/Dhammasutta/asubha-images/blob/main/%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%A0%E0%B8%B002.JPG?raw=true",
+        caption: "ร่างกายที่เคยปรนนิบัติ บัดนี้เปรอะเปื้อนสิ่งไม่น่าดู"
+      },
+      {
+        url: "https://github.com/Dhammasutta/asubha-images/blob/main/%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%A0%E0%B8%B004.JPG?raw=true",
+        caption: "แม้จะเคยสง่างามเพียงใด บัดนี้เหลือเพียงกายอันน่าสังเวช"
+      },
+      {
+        url: "https://github.com/Dhammasutta/asubha-images/blob/main/%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%A0%E0%B8%B043tsd-3-768x1024.JPG?raw=true",
+        caption: "สิ่งที่เคยยึดว่าเป็นเรา กลับผุพังจนไร้สิ่งน่ายึดถือ"
+      },
+      {
+        url: "https://github.com/Dhammasutta/asubha-images/blob/main/%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%A0%E0%B8%B0493t-9.JPG?raw=true",
+        caption: "จากชีวิตที่เคยเร่าร้อน บัดนี้เย็นชืดดั่งซากวัตถุ"
+      },
+      {
+        url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะg13.jpg",
+        caption: "อสุภะกายที่แตกพอง จนไม่เหลือความน่ารักใด"
+      },
+      {
+        url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะ6-5.jpg",
+        caption: "ร่างนี้มีเพียงธาตุผสม ไม่ควรยึดถือว่าเป็นเรา"
+      },
+      {
+        url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะ34y5-4.jpg",
+        caption: "ของที่เคยรักบัดนี้ไม่น่าดูเลยแม้แต่น้อย"
+      },
+      {
+        url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะ34y5-3.jpg",
+        caption: "ศพนี้คือสังขารอันไม่เที่ยง เป็นที่สังเวชแก่ใจ"
+      },
+      {
+        url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะ024x525.JPG",
+        caption: "อสุภะนี้เพื่อเตือนให้รู้ว่า ทุกสิ่งย่อมเสื่อมสลาย"
+      }
+    ];
 
-{
-    id: "https://github.com/Dhammasutta/asubha-images/blob/main/%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%A0%E0%B8%B002.JPG?raw=true",
-    caption: "ร่างกายที่เคยปรนนิบัติ บัดนี้เปรอะเปื้อนสิ่งไม่น่าดู"
-  },
-  {
-    id: "https://github.com/Dhammasutta/asubha-images/blob/main/%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%A0%E0%B8%B004.JPG?raw=true",
-    caption: "แม้จะเคยสง่างามเพียงใด บัดนี้เหลือเพียงกายอันน่าสังเวช"
-  },
-  {
-    id: "https://github.com/Dhammasutta/asubha-images/blob/main/%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%A0%E0%B8%B043tsd-3-768x1024.JPG?raw=true",
-    caption: "สิ่งที่เคยยึดว่าเป็นเรา กลับผุพังจนไร้สิ่งน่ายึดถือ"
-  },
-  {
-    id: "https://github.com/Dhammasutta/asubha-images/blob/main/%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%A0%E0%B8%B0493t-9.JPG?raw=true",
-    caption: "จากชีวิตที่เคยเร่าร้อน บัดนี้เย็นชืดดั่งซากวัตถุ"
-  }
+    let currentIndex = 0;
 
-
-
-
-
-
-    
-    {
-      url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะg13.jpg",
-      caption: "อสุภะกายที่แตกพอง จนไม่เหลือความน่ารักใด"
-    },
-    {
-      url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะ6-5.jpg",
-      caption: "ร่างนี้มีเพียงธาตุผสม ไม่ควรยึดถือว่าเป็นเรา"
-    },
-    {
-      url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะ34y5-4.jpg",
-      caption: "ของที่เคยรักบัดนี้ไม่น่าดูเลยแม้แต่น้อย"
-    },
-    {
-      url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะ34y5-3.jpg",
-      caption: "ศพนี้คือสังขารอันไม่เที่ยง เป็นที่สังเวชแก่ใจ"
-    },
-    {
-      url: "https://raw.githubusercontent.com/Dhammasutta/asubha-images/main/อสุภะ024x525.JPG",
-      caption: "อสุภะนี้เพื่อเตือนให้รู้ว่า ทุกสิ่งย่อมเสื่อมสลาย"
+    function showImage(index) {
+      const img = document.getElementById("asubha-img");
+      const caption = document.getElementById("asubha-caption");
+      img.src = images[index].url;
+      caption.textContent = images[index].caption;
     }
-  ];
 
-  let currentIndex = 0;
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
 
-  function showImage(index) {
-    const img = document.getElementById("asubha-img");
-    const caption = document.getElementById("asubha-caption");
-    img.src = images[index].url;
-    caption.textContent = images[index].caption;
-  }
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
 
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  }
+    function randomImage() {
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * images.length);
+      } while (randomIndex === currentIndex);
+      currentIndex = randomIndex;
+      showImage(currentIndex);
+    }
 
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  }
-
-  function randomImage() {
-    let randomIndex;
-    do {
-      randomIndex = Math.floor(Math.random() * images.length);
-    } while (randomIndex === currentIndex);
-    currentIndex = randomIndex;
-    showImage(currentIndex);
-  }
-
-  window.onload = () => {
-    showImage(currentIndex);
-  };
-</script>
+    window.onload = () => {
+      showImage(currentIndex);
+    };
+  </script>
 </body>
 </html>
