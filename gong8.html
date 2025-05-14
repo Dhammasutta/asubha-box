@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>กองที่ ๘ – โลหิตกะ</title>
+  <style>
+    body {
+      font-family: "TH Sarabun New", sans-serif;
+      background: #fff8dc;
+      color: #5a3e1b;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #8b0000;
+      margin-bottom: 10px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      margin-bottom: 10px;
+    }
+    .caption {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 8px 16px;
+      margin: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background: #8B4513;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #A0522D;
+    }
+  </style>
+</head>
+<body>
+  <h2>📂 กองที่ ๘ – โลหิตกะ (อสุภะที่มีโลหิตเกลื่อนกลาด)</h2>
+
+  <img id="asubha-img" src="" alt="อสุภะ">
+  <div class="caption" id="caption">ภาพเพื่อการพิจารณาความเป็นของไม่งาม</div>
+
+  <div>
+    <button onclick="prevImage()">◀ ย้อนกลับ</button>
+    <button onclick="nextImage()">▶ ถัดไป</button>
+    <button onclick="randomImage()">🎲 สุ่มภาพ</button>
+  </div>
+
+  <script>
+    const images = [
+      {
+        url: "https://drive.google.com/uc?export=view&id=1cYoF1LFSyxXaufbODeeGiCKGPlgHasR0",
+        caption: "ศพที่มีโลหิตเปรอะเปื้อน – โลหิตกะ"
+      },
+      {
+        url: "https://drive.google.com/uc?export=view&id=12W24bm-1wClVKJoFD33NtITNsksv4np3",
+        caption: "อสุภะกอง ๘ – เปื้อนด้วยเลือดสด"
+      },
+      {
+        url: "https://drive.google.com/uc?export=view&id=1zueT-7LibYzC4U6YgRBx2EHEiV0JTn6N",
+        caption: "การพิจารณาว่า "สิ่งนี้ไม่งาม ไม่น่ายึดถือ""
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+      const img = document.getElementById("asubha-img");
+      const caption = document.getElementById("caption");
+      img.src = images[index].url;
+      caption.textContent = images[index].caption;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    function randomImage() {
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * images.length);
+      } while (newIndex === currentIndex);
+      currentIndex = newIndex;
+      showImage(currentIndex);
+    }
+
+    window.onload = function () {
+      showImage(currentIndex);
+    }
+  </script>
+</body>
+</html>
