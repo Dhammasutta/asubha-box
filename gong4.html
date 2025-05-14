@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>กองที่ ๔ – วิจฉิตรกะ</title>
+  <style>
+    body {
+      font-family: "TH Sarabun New", sans-serif;
+      background: #fff8dc;
+      color: #5a3e1b;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #8b0000;
+      margin-bottom: 10px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      margin-bottom: 10px;
+    }
+    .caption {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 8px 16px;
+      margin: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background: #8B4513;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #A0522D;
+    }
+  </style>
+</head>
+<body>
+  <h2>📂 กองที่ ๔ – วิจฉิตรกะ (ซากศพขาดตรงกลางตัว)</h2>
+
+  <img id="asubha-img" src="" alt="อสุภะ">
+  <div class="caption" id="caption">ภาพเพื่อการพิจารณาความไม่เที่ยง</div>
+
+  <div>
+    <button onclick="prevImage()">◀ ย้อนกลับ</button>
+    <button onclick="nextImage()">▶ ถัดไป</button>
+    <button onclick="randomImage()">🎲 สุ่มภาพ</button>
+  </div>
+
+  <script>
+    const images = [
+      {
+        url: "https://drive.google.com/uc?export=view&id=1d0RVPrE7mIre5LY3Ef_r7dN1sLqTblmN",
+        caption: "ศพที่ขาดกลางตัว - เพื่อการพิจารณาความไม่งาม"
+      },
+      {
+        url: "https://drive.google.com/uc?export=view&id=1ZIXmWmctANdt5-VAkyx8E9FpNjKr5vaI",
+        caption: "อสุภะกอง ๔ - ซากศพที่แยกครึ่ง"
+      },
+      {
+        url: "https://drive.google.com/uc?export=view&id=14fQLMA1Bi2UC3m31dxqu-4wooLhNOcAT",
+        caption: "ร่างกายที่ถูกแยกส่วนออกจากกัน"
+      },
+      {
+        url: "https://drive.google.com/uc?export=view&id=1zsK7vzzrO1b1mGzkzoLDE6kuCvEQ3ImD",
+        caption: "เพื่อพิจารณาว่า "สิ่งนี้ไม่ใช่เรา ไม่ใช่ของเรา""
+      },
+      {
+        url: "https://drive.google.com/uc?export=view&id=11UOhf6rYUViP3CoP14WJ8KzOHsDt0b4K",
+        caption: "ขันธ์นี้ไม่ควรยึดถือ"
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+      const img = document.getElementById("asubha-img");
+      const caption = document.getElementById("caption");
+      img.src = images[index].url;
+      caption.textContent = images[index].caption;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    function randomImage() {
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * images.length);
+      } while (newIndex === currentIndex);
+      currentIndex = newIndex;
+      showImage(currentIndex);
+    }
+
+    window.onload = function () {
+      showImage(currentIndex);
+    }
+  </script>
+</body>
+</html>
+Add page for gong 4
