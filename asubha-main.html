@@ -8,8 +8,9 @@
       font-family: "TH Sarabun New", sans-serif;
       background: #FFF8DC;
       color: #5A3E1B;
-      margin: 0;
+      margin: 0 auto;
       padding: 20px;
+      max-width: 800px;
     }
     h1 {
       text-align: center;
@@ -26,6 +27,9 @@
       margin: 0;
       cursor: pointer;
       color: #4B2E1A;
+      padding: 8px;
+      background-color: #d6c1a8;
+      border-radius: 6px;
     }
     .accordion-content {
       display: none;
@@ -60,35 +64,21 @@
 </head>
 <body>
 
-
-
-  <!-- กล่องสุ่มภาพรวม -->
   <iframe src="https://dhammasutta.github.io/asubha-box/asubha-box.html"></iframe>
-<!-- กล่องสุ่มภาพรวม -->
 
-
-
-
-
-
- <div class="info">
+  <div class="info">
     คลิกดูภาพแบบสุ่มด้านบน หรือเลือกแสดงภาพตามลักษณะของอสุภะทั้ง ๑๐ กอง<br>
     เพื่อประโยชน์แห่งการพิจารณาความไม่งามของสังขาร
   </div>
 
-  
   <h1>🪷 แยกกองอสุภะเพื่อการพิจารณา</h1>
-
- 
 
   <div class="notice">
     🔒 ขณะนี้เปิดใช้งานเฉพาะภาพสุ่มรวม<br>
     ส่วนภาพแยกตามกองทั้ง ๑๐ จะเปิดใช้งานเมื่อรวบรวมภาพได้มากเพียงพอ 🙏
   </div>
 
-
-
-<div class="accordion">
+  <div class="accordion">
     <h3 onclick="toggleAccordion(this)">📂 กองที่ ๑ – อุทธุมาตกะ ▾</h3>
     <div class="accordion-content">
       <iframe src="https://dhammasutta.github.io/asubha-box/gong1.html"></iframe>
@@ -109,72 +99,54 @@
     </div>
   </div>
 
-
-
-<div class="accordion">
+  <div class="accordion">
     <h3 onclick="toggleAccordion(this)">📂 กองที่ ๔ – วิจฉิตรกะ ▾</h3>
     <div class="accordion-content">
       <iframe src="https://dhammasutta.github.io/asubha-box/gong4.html"></iframe>
     </div>
   </div>
 
-<div class="accordion">
+  <div class="accordion">
     <h3 onclick="toggleAccordion(this)">📂 กองที่ ๕ – วิกขายิตกะ ▾</h3>
     <div class="accordion-content">
       <iframe src="https://dhammasutta.github.io/asubha-box/gong5.html"></iframe>
     </div>
   </div>
 
-<div class="accordion">
+  <div class="accordion">
     <h3 onclick="toggleAccordion(this)">📂 กองที่ ๖ – วิกขิตตกะ ▾</h3>
     <div class="accordion-content">
       <iframe src="https://dhammasutta.github.io/asubha-box/gong6.html"></iframe>
     </div>
   </div>
 
-
-<div class="accordion">
+  <div class="accordion">
     <h3 onclick="toggleAccordion(this)">📂 กองที่ ๗ – หตวิกขิตตกะ ▾</h3>
     <div class="accordion-content">
       <iframe src="https://dhammasutta.github.io/asubha-box/gong7.html"></iframe>
     </div>
   </div>
 
-
   <div class="accordion">
     <h3 onclick="toggleAccordion(this)">📂 กองที่ ๘ – โลหิตกะ ▾</h3>
     <div class="accordion-content">
-<iframe src="https://dhammasutta.github.io/asubha-box/gong8.html"></iframe>
-  </div>
+      <iframe src="https://dhammasutta.github.io/asubha-box/gong8.html"></iframe>
+    </div>
   </div>
 
-    <div class="accordion">
+  <div class="accordion">
     <h3 onclick="toggleAccordion(this)">📂 กองที่ ๙ – ปุฬุวกะ ▾</h3>
     <div class="accordion-content">
-<iframe src="https://dhammasutta.github.io/asubha-box/gong9.html"></iframe>
-  </div>
+      <iframe src="https://dhammasutta.github.io/asubha-box/gong9.html"></iframe>
+    </div>
   </div>
 
-
-    <div class="accordion">
+  <div class="accordion">
     <h3 onclick="toggleAccordion(this)">📂 กองที่ ๑๐ – อัฏฐิกะ ▾</h3>
     <div class="accordion-content">
-<iframe src="https://dhammasutta.github.io/asubha-box/gong10.html"></iframe>
+      <iframe src="https://dhammasutta.github.io/asubha-box/gong10.html"></iframe>
+    </div>
   </div>
-  </div>
-
-
-
-
-
-
-
-
-
-      
-  
-  <!-- Accordion 10 กอง ยังคงเปิดให้ดูโครงสร้าง -->
-  <!-- ... (accordion blocks remain the same) ... -->
 
   <script>
     function toggleAccordion(header) {
